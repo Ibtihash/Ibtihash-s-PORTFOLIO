@@ -1,0 +1,23 @@
+
+/* src/styles/variables.css */
+
+:root {
+  --primary-color: #0a192f; /* Deep navy blue */
+  --accent-color: #64ffda; /* Bright, modern mint green */
+  --text-color-dark: #ccd6f6; /* Light slate gray for text */
+  --text-color-light: #8892b0; /* Lighter slate gray for secondary text */
+  --background-color: #0a192f; /* Matching the primary color for a seamless look */
+  --card-background-color: #112240; /* Slightly lighter navy for cards */
+  --border-color: #233554; /* A subtle border color */
+  --shadow-color: rgba(2, 12, 27, 0.7); /* A darker, more pronounced shadow */
+  --shadow-color-hover: rgba(2, 12, 27, 0.9); /* A darker hover shadow */
+
+  /* Gradient for background */
+  --background-gradient: linear-gradient(180deg, #0a192f 0%, #112240 100%);
+
+  /* Home Page Section Colors */
+  --home-profile-bg: transparent;
+  --home-skills-bg: transparent;
+  --home-projects-bg: transparent;
+  --home-footer-bg: transparent;
+}

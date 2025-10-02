@@ -1,0 +1,126 @@
+/* Skills.css */
+
+/* General container styling */
+.skills-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: var(--background-color);
+}
+
+/* Section Heading */
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 60px;
+  background-color: var(--accent-color); /* Primary color underline */
+  border-radius: 2px;
+}
+
+/* Form Styling */
+.skill-form {
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1.5rem var(--shadow-color);
+  margin-bottom: 3rem;
+  background-color: var(--card-background-color);
+}
+
+.skill-form .form-label {
+  font-weight: 500;
+  color: var(--text-color-light);
+}
+
+.skill-form .form-control {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.skill-form .btn-primary {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.skill-form .btn-primary:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Skill Card Styling */
+.custom-card {
+  border: none; /* Remove default border */
+  border-radius: 0.75rem; /* Rounded corners */
+  box-shadow: 0 0.5rem 1.5rem var(--shadow-color); /* More pronounced shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  height: 100%; /* Ensure consistent height */
+  background-color: var(--card-background-color);
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 1rem 2rem var(--shadow-color-hover); /* Enhanced shadow on hover */
+}
+
+.custom-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+
+.custom-card-body {
+  padding: 1.5rem;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  color: var(--accent-color);
+}
+
+.custom-card-body .btn {
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.custom-card-body .btn-secondary {
+  background-color: var(--text-color-light);
+  border-color: var(--text-color-light);
+}
+
+.custom-card-body .btn-secondary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.custom-card-body .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.custom-card-body .btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.skill-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between icon and text */
+}
