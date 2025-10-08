@@ -1,0 +1,49 @@
+.moving-bar-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+  background-color: var(--primary-color);
+}
+
+.animate-scroll {
+  animation: scroll 50s linear infinite;
+}
+
+.hover\:animate-paused:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* TailwindCSS utilities */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.gap-2 { gap: 0.5rem; }
+.gap-12 { gap: 3rem; }
+.w-max { width: max-content; }
+.h-7 { height: 1.75rem; }
+.w-auto { width: auto; }
+.object-contain { object-fit: contain; }
+.transition-transform { transition-property: transform; }
+.transition-all { transition-property: all; }
+.duration-300 { transition-duration: 300ms; }
+.opacity-60 { opacity: 0.6; }
+.text-lg { font-size: 1.125rem; }
+.font-medium { font-weight: 500; }
+
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .md\:gap-20 {
+    gap: 5rem;
+  }
+}

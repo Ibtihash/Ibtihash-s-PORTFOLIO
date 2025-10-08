@@ -1,0 +1,52 @@
+
+.skill-manager {
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.skill-manager .form-label {
+  font-weight: 500;
+}
+
+.skill-manager .form-control {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.skill-manager .btn-primary {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.skill-manager .btn-secondary {
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.skill-manager .btn-danger {
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.skills-list {
+  margin-top: 2rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-item-name {
+  font-weight: 500;
+}

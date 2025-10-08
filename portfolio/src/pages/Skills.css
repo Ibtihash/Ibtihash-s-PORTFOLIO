@@ -1,0 +1,110 @@
+.skills-container {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.skill-card-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-card {
+  width: 100%;
+  background: var(--card-background-color, #ffffff);
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.custom-card:hover .skill-logo {
+  transform: scale(1.1);
+}
+
+.custom-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
+  color: var(--text-color, #333);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background-color: var(--warning-color, #ffc107);
+  color: var(--dark-text, #000);
+}
+
+.delete-button {
+  background-color: var(--danger-color, #dc3545);
+  color: var(--light-text, #fff);
+}
+
+.action-button:hover {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skills-container {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .custom-card {
+    padding: 1rem;
+  }
+}
