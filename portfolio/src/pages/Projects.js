@@ -7,7 +7,7 @@ const Projects = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [link, setLink] = useState('');
-  const [file, setFile] = useState(null);
+  const [githubLink, setGithubLink] = useState('');
   
   const [editingProject, setEditingProject] = useState(null);
 
@@ -24,21 +24,20 @@ const Projects = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('description', description);
-    formData.append('link', link);
-    if (file) {
-      formData.append('file', file);
-    }
+    const projectData = {
+      title,
+      description,
+      link,
+      githubLink
+    };
 
     const url = editingProject
       ? `/projects/update/${editingProject._id}`
       : '/projects/add';
 
-    axios.post(url, formData, {
+    axios.post(url, projectData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'application/json'
       }
     })
       .then(res => {
@@ -47,7 +46,7 @@ const Projects = () => {
         setTitle('');
         setDescription('');
         setLink('');
-        setFile(null);
+        setGithubLink('');
         
         // Refresh projects
         axios.get('/projects')
@@ -74,6 +73,7 @@ const Projects = () => {
     setTitle(project.title);
     setDescription(project.description);
     setLink(project.link);
+    setGithubLink(project.githubLink);
   };
 
   return (
@@ -100,8 +100,8 @@ const Projects = () => {
           <textarea className="form-control" id="description" rows="3" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter project description" required></textarea>
         </div>
         <div className="mb-3">
-          <label htmlFor="file" className="form-label">Project Image</label>
-          <input type="file" className="form-control" id="file" onChange={(e) => setFile(e.target.files[0])} />
+          <label htmlFor="githubLink" className="form-label">GitHub Repository Link</label>
+          <input type="text" className="form-control" id="githubLink" value={githubLink} onChange={(e) => setGithubLink(e.target.value)} placeholder="Enter GitHub repository link" />
         </div>
         
         <button type="submit" className="btn btn-primary w-100">{editingProject ? 'Update Project' : 'Add Project'}</button>

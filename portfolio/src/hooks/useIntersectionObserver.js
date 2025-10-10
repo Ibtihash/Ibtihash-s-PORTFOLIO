@@ -1,5 +1,5 @@
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 const useIntersectionObserver = (options) => {
   const [ref, setRef] = useState(null);

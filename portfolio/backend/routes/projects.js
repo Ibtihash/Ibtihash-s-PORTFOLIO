@@ -1,11 +1,5 @@
 const router = require('express').Router();
-const multer = require('multer');
-const upload = multer(); // For parsing multipart/form-data without file uploads
-
-
 let Project = require('../models/project.js');
-
-
 
 // Get all projects
 router.route('/').get(async (req, res) => {
@@ -20,18 +14,18 @@ router.route('/').get(async (req, res) => {
 });
 
 // Add a project
-router.route('/add').post(upload.none(), async (req, res) => { // Add upload.none() middleware
+router.route('/add').post(async (req, res) => {
   console.log("👉 /projects/add hit");
   console.log("req.body:", req.body);
 
   try {
-    const { title, description, link } = req.body;
-    // imageUrl is not in the schema and not being uploaded, so remove it from here
+    const { title, description, link, githubLink } = req.body;
 
     const newProject = new Project({
       title,
       description,
       link,
+      githubLink
     });
 
     await newProject.save();
@@ -72,6 +66,7 @@ router.route('/update/:id').post(async (req, res) => {
     project.title = req.body.title;
     project.description = req.body.description;
     project.link = req.body.link;
+    project.githubLink = req.body.githubLink;
 
     await project.save();
     res.json({ message: 'Project updated!', project });

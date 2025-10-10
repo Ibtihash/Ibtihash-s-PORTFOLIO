@@ -2,17 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Home.css';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
-import { FaReact, FaNodeJs, FaDatabase, FaCode, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaCode, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 import MovingBar from '../components/MovingBar';
-
-const skillIconMapping = {
-  React: <FaReact />,
-  'Node.js': <FaNodeJs />,
-  MongoDB: <FaDatabase />,
-  JavaScript: <FaCode />,
-  // Add more mappings as needed
-};
 
 const Home = () => {
   const [profile, setProfile] = useState(null);
@@ -181,10 +173,22 @@ const Home = () => {
                 <div className="card-body">
                   <h5 className="custom-card-title">{project.title}</h5>
                   <p className="custom-card-text">{project.description}</p>
-                  {project.imageUrl && (
-                    <img src={`/${project.imageUrl}`} alt={project.title} className="img-fluid project-image mb-3" />
-                  )}
-                  <a href={project.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+                  {/* Project images should be placed in the public/images directory.
+                      The naming convention is project-title.png, where the title is lowercase and spaces are replaced with hyphens.
+                      For example, a project named "My Project" should have an image named "my-project.png". */}
+                  <img
+                    src={`/images/${project.title.toLowerCase().replace(/ /g, '-')}.png`}
+                    alt={project.title}
+                    className="img-fluid project-image mb-3"
+                    onError={(e) => {
+                      e.target.onerror = null; // prevents looping
+                      e.target.src = "https://placehold.co/150.png?text=Image+needed";
+                    }}
+                  />
+                  <div className="d-flex justify-content-between">
+                    <a href={project.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <a href={project.githubLink} className="btn btn-secondary" target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
+                  </div>
                 </div>
               </div>
             </div>
